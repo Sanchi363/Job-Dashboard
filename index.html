@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Application Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div id="notification-container"></div>
+
+  <div class="app">
+
+    <header>
+      <h1>Job Application Dashboard</h1>
+    </header>
+
+    <main>
+      <section class="form-section">
+        <form id="jobForm">
+          <h2>Add Job Application</h2>
+
+          <label for="company">Company Name</label>
+          <input type="text" id="company" required />
+
+          <label for="role">Role</label>
+          <input type="text" id="role" required />
+
+          <label for="status">Status</label>
+          <select id="status" required>
+            <option value="">Select status</option>
+            <option value="Applied">Applied</option>
+            <option value="Shortlisted">Shortlisted</option>
+            <option value="Interview">Interview</option>
+            <option value="Offer">Offer</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+
+          <label for="date">Date Applied</label>
+          <input type="date" id="date" required />
+
+          <button type="submit">Add Application</button>
+        </form>
+      </section>
+
+      <div class="container">
+
+        <section class="display">
+          <h2>Applications</h2>
+
+          <div class="controls">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search by company or role"
+            />
+
+            <select id="filterStatus">
+              <option value="All">All Status</option>
+              <option value="Applied">Applied</option>
+              <option value="Shortlisted">Shortlisted</option>
+              <option value="Interview">Interview</option>
+              <option value="Offer">Offer</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+
+            <select id="sortDate">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+            </select>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Company</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="jobTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="stats">
+          <h2>Dashboard Stats</h2>
+
+          <div class="stats-wrapper">
+            <div class="stats-grid">
+
+              <div class="stat-card">
+                <span class="stat-number" id="totalCount">0</span>
+                <span class="stat-label">Total</span>
+              </div>
+
+              <div class="stat-card applied">
+                <span class="stat-number" id="appliedCount">0</span>
+                <span class="stat-label">Applied</span>
+              </div>
+
+              <div class="stat-card shortlisted">
+                <span class="stat-number" id="shortlistedCount">0</span>
+                <span class="stat-label">Shortlisted</span>
+              </div>
+
+              <div class="stat-card interview">
+                <span class="stat-number" id="interviewCount">0</span>
+                <span class="stat-label">Interview</span>
+              </div>
+
+              <div class="stat-card offer">
+                <span class="stat-number" id="offerCount">0</span>
+                <span class="stat-label">Offer</span>
+              </div>
+
+              <div class="stat-card rejected">
+                <span class="stat-number" id="rejectedCount">0</span>
+                <span class="stat-label">Rejected</span>
+              </div>
+
+            </div>
+
+            <div class="donut-wrapper">
+              <div class="donut" id="statusDonut"></div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
